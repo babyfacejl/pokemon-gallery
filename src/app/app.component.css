@@ -1,0 +1,35 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centre-left {
+    position: absolute;
+    top: 215px;
+    left: 130px;
+    transform: translate(-50%, -50%);
+
+}
+
+h1 {
+  color: white
+}
+
+div.box-container {
+    text-align: center;
+    width: 200px;
+    height: 100px;
+}
+
+div.info {
+  text-align: left;
+  position: relative;
+  left: 140px;
+  top: -90px;
+}
+
+div.imagebox {
+  width: 110px;
+  height: 110px;
+}
