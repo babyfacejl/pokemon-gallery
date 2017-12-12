@@ -14,12 +14,7 @@ export class PokemonService {
 
     public getAll(): any {
         const url = 'http://pokeapi.co/api/v2/pokemon?limit=151';
-        return this.http.get(url).map(response => { return response.json()}).catch(this.handleError);
+        return this.http.get(url).map(response => { return response.json()});
     }
 
-    private handleError(error: any) {
-      let errMsg = (error.message) ? error.message : error.status ? `$(error.status) - ${error.statusText }` : 'Server error';
-      console.error(errMsg);
-      return Observable.throw(errMsg);
-    }
 }

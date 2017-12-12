@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { PokemonService } from './services/pokemon.service'
 import { HttpModule, Http } from '@angular/http';
 import { AppComponent } from './app.component';
-import {NG2DataTableModule} from "angular2-datatable-pagination";
+import { SearchFilter } from './pipes/searchFilter.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchFilter
   ],
   imports: [
     BrowserModule,
