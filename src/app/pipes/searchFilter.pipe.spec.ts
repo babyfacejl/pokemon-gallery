@@ -18,19 +18,26 @@ describe('Search filter test', () => {
     pokemons.push(pokemon4);
   });
 
-  it ('should find pokmens if search text matches', () => {
+  it ('should find pokemons if search text matches', () => {
     let results = searchFilter.transform(pokemons, 'pika');
     expect(results.length).toBe(1);
     expect(results[0].name).toBe("pikachu");
   });
 
-  it ('should find all pokmens if search text not specified', () => {
+  it ('should find all pokemons if search text not specified', () => {
     let results = searchFilter.transform(pokemons, '');
     expect(results.length).toBe(4);
   });
 
-  it ('should find all pokmens if search text no match', () => {
+  it ('should find all pokemons if search text no match', () => {
     let results = searchFilter.transform(pokemons, '');
     expect(results.length).toBe(4);
   });
+
+  it ('should find pokemons with case insensitive search', () => {
+    let results = searchFilter.transform(pokemons, 'PIKA');
+    expect(results.length).toBe(1);
+    expect(results[0].name).toBe("pikachu");
+  });
+
 });

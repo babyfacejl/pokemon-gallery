@@ -9,6 +9,6 @@ export class SearchFilter implements PipeTransform {
         if (!filter) {
             return items;
         }
-        return items.filter(item => item.name.indexOf(filter) !== -1);
+        return items.filter(item => item.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
     }
 }
