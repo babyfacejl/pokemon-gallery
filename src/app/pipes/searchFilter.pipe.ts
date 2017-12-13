@@ -6,9 +6,9 @@ import { Pokemon } from '../model/pokemon';
 })
 export class SearchFilter implements PipeTransform {
     public transform(items: Pokemon[], filter: string): any {
-        if (!filter) {
+        if (!filter || filter.trim() == '') {
             return items;
         }
-        return items.filter(item => item.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+        return items.filter(item => item.name.toLowerCase().indexOf(filter.trim().toLowerCase()) !== -1);
     }
 }

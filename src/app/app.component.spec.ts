@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { SearchFilter } from './pipes/searchFilter.pipe';
 import { PokemonService} from './services/pokemon.service';
+import { PagerService} from './services/pager.service';
 import { HttpModule, Http } from '@angular/http';
 
 describe('AppComponent', () => {
@@ -11,7 +12,7 @@ describe('AppComponent', () => {
         SearchFilter,
         AppComponent
       ],
-      providers: [ PokemonService ],
+      providers: [ PokemonService, PagerService ],
       imports: [
         HttpModule
       ],

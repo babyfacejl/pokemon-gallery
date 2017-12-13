@@ -8,11 +8,20 @@
 </div>
 
 <div class="container">
-
-  <div class="row">
-    <div *ngFor="let pokemon of pokemons | searchFilter:searchText.value" class="col-xs-6 col-sm-3 col-md-3">
-      <div><img [src]="pokemon.imageUrl" /><div class="info">#{{pokemon.index}}<br/>{{pokemon.name}}</div></div>
+  <div class="text-center">
+    <div *ngFor="let pokemon of pagedItems" class="col-xs-6 col-sm-3 col-md-3">
+      <div><span><img [src]="pokemon.imageUrl" /></span><br/><div class="info">#{{pokemon.index}}<br/>{{pokemon.name}}</div></div>
     </div>
   </div>
+</div>
 
+<div class="container">
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <li [ngClass]="{disabled:pager.currentPage === 1}">
+      <a (click)="setPage(pokemonsInAction, pager.currentPage - 1)">Previous</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+      <a (click)="setPage(pokemonsInAction, pager.currentPage + 1)">Next</a>
+    </li>
+  </ul>
 </div>
